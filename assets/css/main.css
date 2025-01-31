@@ -128,7 +128,9 @@ em, i {
   font-style: italic; }
 
 p {
-  margin: 0 0 2em 0; }
+  margin: 0 0 2em 0;
+   font-size: 16px;
+   line-height: 1.8;}
 
 h1, h2, h3, h4, h5, h6 {
   color: #3d4449;
@@ -1873,6 +1875,28 @@ button,
   margin-top: 1.5em;
   width: 100%;
   }
+
+.featured-project .image-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-bottom: 1.5em;
+    width: 100%;
+}
+
+.featured-project .image-container a {
+    flex-grow: 1;
+    flex-shrink: 0;
+    max-width: 90%;
+}
+
+.featured-project .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
 
 
 /* Posts */
