@@ -129,7 +129,7 @@ em, i {
 
 p {
   margin: 0 0 2em 0;
-   font-size: 16px;
+   font-size: 15px;
    line-height: 1.8;}
 
 h1, h2, h3, h4, h5, h6 {
@@ -1272,6 +1272,7 @@ ul {
   margin: 0 0 2em 0;
   padding-left: 1em; }
   ul li {
+    font-size: 14px;
     padding-left: 0.5em; }
   ul.alt {
     list-style: none;
@@ -2077,7 +2078,7 @@ scroll-behavior: smooth;
   -moz-flex-direction: row-reverse;
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
+  flex-direction: column;
   min-height: 100vh; }
 
 /* Main */
@@ -2233,11 +2234,11 @@ scroll-behavior: smooth;
       max-height: 35vh; } }
 
 /* Footer */
-#footer .copyright {
-  color: #9fa3a6;
-  font-size: 0.9em; }
-  #footer .copyright a {
-    color: inherit; }
+#footer {
+  text-align: center;
+  padding: 1.5em 0;
+  width: 100%;
+}
 
 /* Menu */
 #menu ul {
