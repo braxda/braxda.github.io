@@ -1244,7 +1244,10 @@ input[type="radio"] + label:before {
     margin: 0 0 3em 0;
     width: 100%; }
     .image.main img {
-      width: 100%; }
+      width: 70%;
+      margin: 0 auto;
+      height: auto;
+      display: block;}
 
 a.image {
   overflow: hidden; }
@@ -2040,7 +2043,7 @@ button,
 }
 
 #header nav ul li {
-    display: inline;
+    position: relative;
 }
 
 #header nav ul li a {
@@ -2049,10 +2052,36 @@ button,
     font-size: 1.1em;
     font-weight: bold;
     transition: color 0.3s ease;
+    display: block;
+    padding: 10px 15px;
 }
 
 #header nav ul li a:hover {
     color: #f39c12;
+}
+
+#header nav ul .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    z-index: 100;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#header nav ul .dropdown-content li {
+    display: block;
+}
+
+#header nav ul .dropdown-content li a {
+    color: black;
+    padding: 10px;
+}
+
+#header nav ul li:hover .dropdown-content {
+    color: black;
+    display: block;
 }
 
 body {
