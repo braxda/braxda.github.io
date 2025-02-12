@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body class="is-preload">
 
@@ -30,18 +31,14 @@
 
                 <!-- QGIS Map Section -->
                 <section>
-                    <header class="main">
-                        <h1>Interactive QGIS Recruiting Map</h1>
-                    </header>
+                        <h1>Interactive Recruiting Map</h1>
+                        <p>Explore different recruiting layers: player locations, school footprints, travel zones, and more.</p>
 
-                    <p>This interactive map visualizes **college football recruiting footprints** by displaying player hometowns, talent hotspots, and team territories. You can explore different layers to see how talent distribution varies by region.</p>
-
-                    <!-- Embed QGIS Web Map (if exported) -->
-                    <iframe src="URL_TO_YOUR_QGIS_WEB_MAP" width="100%" height="600"></iframe>
-
-                    <hr class="major" />
+                        <div id="map" style="height: 500px; width: 100%; max-width: 1200px; margin: auto;"></div>
+                </section>
 
                     <!-- Static QGIS Map Images (For Preview) -->
+                <section>
                     <h2>Static QGIS Visualizations</h2>
                     <div class="row">
                         <div class="col-6 col-12-small">
@@ -86,6 +83,9 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="map.js"></script>
+
 
 </body>
 </html>
