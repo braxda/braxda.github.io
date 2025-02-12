@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Tableau Dashboards - Dylan Bracken</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main Content -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>Dylan Bracken</strong> Portfolio</a>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="featured-project.html">Featured Project</a></li>
+                            <li><a href="index.html#other-projects">Other Projects</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <!-- Tableau Dashboards Section -->
+                <section>
+                    <header class="main">
+                        <h1>Tableau Dashboards</h1>
+                    </header>
+
+                    <p>This page showcases my <strong>interactive Tableau dashboards</strong> used for analyzing NCAA recruiting trends and player distributions.</p>
+
+                    <hr class="major" />
+
+                    <h2>Washington Dashboard</h2>
+                    <div class='tableauPlaceholder' id='viz1' style='position: relative'>
+                        <noscript>
+                            <a href='#'><img alt='Washington Dashboard' src='https://public.tableau.com/static/images/cf/cfb_michigan_FINAL/washington_dashboard/1_rss.png' style='border: none' /></a>
+                        </noscript>
+                        <object class='tableauViz' style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='name' value='cfb_michigan_FINAL/washington_dashboard' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                        </object>
+                    </div>
+
+                    <h2>Other Team Dashboards</h2>
+                    <p>Explore dashboards for <strong>Michigan, Alabama, and Texas</strong> to see how their recruiting strategies compare.</p>
+                    <ul>
+                        <li><a href="https://public.tableau.com/views/cfb_michigan_FINAL/michigan_dashboard" target="_blank">Michigan Dashboard</a></li>
+                        <li><a href="https://public.tableau.com/views/cfb_alabama_FINAL/alabama_dashboard" target="_blank">Alabama Dashboard</a></li>
+                        <li><a href="https://public.tableau.com/views/cfb_texas_FINAL/texas_dashboard" target="_blank">Texas Dashboard</a></li>
+                    </ul>
+
+                    <hr class="major" />
+
+                    <h2>Explore the Full Project</h2>
+                    <p>The complete dataset, SQL queries, and visualizations are available on GitHub:</p>
+                    <a href="https://github.com/YOUR_GITHUB_USERNAME/recruiting-analysis" target="_blank" class="button">View GitHub Repo</a>
+                </section>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p>Built by Dylan Bracken | <a href="https://html5up.net/" target="_blank" rel="noopener noreferrer">Built with HTML5 UP</a></p>
+            <p>Find me on:
+                <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer">GitHub</a> |
+                <a href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+</body>
+</html>
