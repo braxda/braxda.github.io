@@ -35,25 +35,25 @@
                     </nav>
                 </header>
 
-                <!-- QGIS Map Section -->
+                <!--Footprint Map Section-->
                 <section>
                         <h1>Interactive Recruiting Map</h1>
                         <p>Explore different recruiting layers: player locations, school footprints, travel zones, and more.</p>
 
-                        <div id="map" style="height: 500px; width: 100%; max-width: 1200px; margin: auto;"></div>
-                </section>
+                    <!--Recruiting Footprint Map-->
+                    <iframe src="https://ucd-cpe.maps.arcgis.com/apps/instant/sidebar/index.html?appid=4cf63702ddc047d6b257cd06a80e1551"
+                width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                    <p>This map visualizes the geographic distribution of college football recruits for each school, using standard deviation ellipses to represent the spatial spread of recruited players. Each ellipse captures the core recruiting footprint for a program, showing the general area where most of their recruits are concentrated. Mean center points mark the average geographic location of recruits for each school, offering a quick visual cue to see where a program’s recruiting base is centered. Together, these tools reveal differences in recruiting strategies—some teams focus heavily on their local region, while others cast a wider national net.</p>
 
-                    <!-- Static QGIS Map Images (For Preview) -->
-                <section>
-                    <h2>Static QGIS Visualizations</h2>
-                    <div class="row">
-                        <div class="col-6 col-12-small">
-                            <span class="image fit"><img src="images/qgis_static1.jpg" alt="QGIS Map 1" /></span>
-                        </div>
-                        <div class="col-6 col-12-small">
-                            <span class="image fit"><img src="images/qgis_static2.jpg" alt="QGIS Map 2" /></span>
-                        </div>
-                    </div>
+                    <!--Recruiting Pipeline Map-->
+                    <iframe src="https://ucd-cpe.maps.arcgis.com/apps/instant/sidebar/index.html?appid=04bebf4edcf5402f9f478971246149e9"
+                width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                    <p>This hub-and-spoke map visualizes the connections between player recruit hometowns and the schools they signed with, illustrating the geographic reach and recruitment pipelines of each program. Each player is represented by a point at their hometown, with lines extending to their chosen program, revealing patterns of regional dominance, cross-country and international recruiting tendencies, and outlier signings. This map highlights the varying geographic strategies programs use to secure talent.</p>
+
+                    <!--Recruiting Hotspots Map-->
+                    <iframe src="https://ucd-cpe.maps.arcgis.com/apps/instant/sidebar/index.html?appid=6857ddf3eb2740c5bbc8497a34d8fb99"
+                width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                    <p>This map visualizes player recruiting hotspots using a heatmap to identify regions with the highest concentration of college football recruits. Warmer colors indicate areas with a dense supply of talent, while cooler areas represent regions with fewer recruits. The visualization highlights well-established recruiting powerhouses like the Southeast, Texas, and California, while also revealing smaller, less traditional hotspots in areas like the Northeast corridor, Seattle, and Detroit—patterns likely driven, in part, by the presence of nearby College Football Playoff contenders from this season.</p>
 
                     <hr class="major" />
 
@@ -73,13 +73,17 @@
         </div>
 
         <!-- Footer -->
-        <footer id="footer">
-            <p>Built by Dylan Bracken | <a href="https://html5up.net/" target="_blank" rel="noopener noreferrer">Built with HTML5 UP</a></p>
-            <p>EDIT LINKSFind me on:
-                <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer">GitHub</a> |
-                <a href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </p>
-        </footer>
+        <section style="padding: .25em 0 !important; background-color: #f4f4f4;">
+            <footer id="footer" style="text-align: center;">
+                <p style="font-size: 12px; line-height: 1.1; margin-bottom: 0.5em;">
+                    Built with <a href="https://html5up.net/" target="_blank" rel="noopener noreferrer">HTML5 UP</a>
+                </p>
+                <p style="margin: 0;">
+                    <a href="mailto:dylanbracken30@gmail.com" target="_blank" class="icon solid fa-envelope" style="font-size: 1.2em; margin-right: 12px; vertical-align: middle;"></a>
+                    <a href="https://github.com/braxda" target="_blank" class="icon brands fa-github" style="font-size: 1.2em; vertical-align: middle;"></a>
+                </p>
+            </footer>
+        </section>
 
     </div>
 
