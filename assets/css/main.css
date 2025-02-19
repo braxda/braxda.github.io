@@ -1901,6 +1901,13 @@ button,
     border-radius: 5px;
 }
 
+/*Featured Project - Map*/
+#map {
+    height: 500px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
 
 
 /* Posts */
