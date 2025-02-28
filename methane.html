@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Methane Emissions Maps</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main Content -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>Dylan Bracken</strong></a>
+                    <nav>
+                        <ul class="icons">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="featured-project.html">Featured Project</a></li>
+                            <li><a href="index.html#other-projects">Other Projects</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <!-- Methane Analysis Section -->
+                <section>
+                    <h1>Methane Emissions Maps</h1>
+                    <p>This project visualizes methane emissions across the U.S., identifying high-emission hotspots and comparing them with known methane sources like landfills, wetlands, and oil/gas infrastructure.</p>
+                    <p>Data for methane concentrations was obtained from the <a href="https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S5P_OFFL_L3_CH4" target="_blank">Sentinel-5P TROPOMI dataset</a>, which provides satellite-based atmospheric measurements. The threshold of 1900 ppb was based on global methane concentration trends reported by the <a href="https://gml.noaa.gov/ccgg/trends_ch4/" target="_blank">NOAA Global Monitoring Laboratory</a>. Additional information on methane emissions from natural and anthropogenic sources was referenced from the <a href="https://www.epa.gov/gmi" target="_blank">EPA Global Methane Initiative</a>.</p>
+
+
+                    <!-- Image Section -->
+                    <div class="posts">
+                        <article>
+                            <a href="images/methanemeanfin.jpg" class="image" target="_blank"><img src="images/methanemeanfin.jpg" alt="Methane Concentration Map"></a>
+                            <h3>Methane Concentration</h3>
+                            <p>This map shows methane concentration levels as detected by Sentinel-5P satellite data.
+                                Major high-emission zones can be observed in oil-producing states like Texas and Louisiana, as well as wetland regions in Florida and along the Mississippi River Basin.
+                                These elevated levels suggest both natural and industrial contributions to methane emissions.</p>
+                        </article>
+
+                        <article>
+                            <a href="images/processingplantsfinal.jpg" class="image" target="_blank"><img src="images/processingplantsfinal.jpg" alt="Processing Plants & Methane"></a>
+                            <h3>Processing Plants</h3>
+                            <p>This map overlays methane emissions with the locations of natural gas processing plants.
+                                The concentration of methane is particularly high around major processing hubs in Texas, Louisiana, and the Midwest, highlighting a strong correlation between fossil fuel infrastructure and methane release.</p>
+                        </article>
+
+                        <article>
+                            <a href="images/wetlandfinal.jpg" class="image" target="_blank"><img src="images/wetlandfinal.jpg" alt="Wetlands & Methane"></a>
+                            <h3>Wetlands & Methane</h3>
+                            <p>Wetlands are a natural source of methane emissions due to anaerobic decomposition in waterlogged soils.
+                                This map compares methane concentrations with major wetland areas, particularly in Florida, the Gulf Coast, and the Great Lakes region.</p>
+                        </article>
+
+                        <article>
+                            <a href="images/landfillfinal.jpg" class="image" target="_blank"><img src="images/landfillfinal.jpg" alt="Landfills & Methane"></a>
+                            <h3>Landfills & Methane</h3>
+                            <p>Landfills generate methane through the decomposition of organic waste, making them a major source of emissions in urban areas.
+                                This map highlights landfill sites across the U.S. in relation to methane concentrations.
+                                Urban centers like California, the Northeast, and the Midwest show elevated methane levels near large landfills, reinforcing their role as localized but significant emission sources.</p>
+                        </article>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <section style="padding: .25em 0 !important; background-color: #f4f4f4;">
+            <footer id="footer" style="text-align: center;">
+                <p style="font-size: 12px; line-height: 1.1; margin-bottom: 0.5em;">
+                    Built with <a href="https://html5up.net/" target="_blank" rel="noopener noreferrer">HTML5 UP</a>
+                </p>
+                <p style="margin: 0;">
+                    <a href="mailto:dylanbracken30@gmail.com" target="_blank" class="icon solid fa-envelope" style="font-size: 1.2em; margin-right: 12px; vertical-align: middle;"></a>
+                    <a href="https://github.com/braxda" target="_blank" class="icon brands fa-github" style="font-size: 1.2em; vertical-align: middle;"></a>
+                </p>
+            </footer>
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="map.js"></script>
+
+</body>
+</html>
