@@ -21,11 +21,25 @@
                 <header id="header">
                     <a href="index.html" class="logo"><strong>Dylan Bracken</strong></a>
                     <nav>
-                        <ul class="icons">
+                        <ul class="icons" style="display: flex; gap: 20px; align-items: center;">
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="featured-project.html">Featured Project</a></li>
-                            <li><a href="index.html#other-projects">Other Projects</a></li>
-                            <li><a href="index.html#contact">Contact</a></li>
+                            <li>
+                                <a href="featured-project.html" class="dropbtn">Featured Project</a>
+                                <ul class="dropdown-content">
+                                    <li><a href="featured-project.html">Project Introduction</a></li>
+                                    <li><a href="qgis.html">QGIS Maps</a></li>
+                                    <li><a href="tableau.html">Tableau Dashboards</a></li>
+                                    <li><a href="featured-project.html#sql">GitHub Repo</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#other-projects" class="dropbtn">Other Projects</a>
+                                <ul class="dropdown-content">
+                                    <li><a href="methane.html">Methane Emissions Analysis</a></li>
+                                    <li><a href="pvd2bos.html">PVD to BOS Route Optimization</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </nav>
                 </header>
