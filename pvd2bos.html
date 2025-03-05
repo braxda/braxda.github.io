@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>PVD to BOS Route Efficiency Analysis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>Dylan Bracken</strong></a>
+                    <nav>
+                        <ul class="icons">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="featured-project.html">Project Overview</a></li>
+                            <li><a href="qgis.html">QGIS Maps</a></li>
+                            <li><a href="github.html">GitHub Repo</a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <section>
+                    <h1>PVD to BOS Route Efficiency Analysis</h1>
+                        <p>For a weekend visit to a friend's apartment in Boston, I conducted an analysis to determine the most time- and cost-efficient travel routes from Providence.</p>
+                        <p>Since overnight parking was not available close to my friend's place, I needed to find an alternative solution. Specifically, I would need to park at a station that did have overnight parking, and then take the train or subway to my destination at Maverick Station.
+                            To tackle this, I designed SQL tables to store and analyze travel data, linking datasets and using aggregate functions to rank routes based on efficiency.</p>
+                        <p>To generate the route efficiency analysis, I first used the Google Maps API to geolocate driving paths from Providence to MBTA train stations that did offer overnight parking, gathering travel times and distances.
+                            Next, I incorporated MassGIS and MBTA datasets to map the commuter rail and subway lines. These datasets were then joined in QGIS, allowing me to visualize the full route from driving segments to transit connections.</p>
+                        <p>To rank the most efficient routes, I developed a SQL query that computed efficiency scores based on a balance of total travel time and cost.
+                            The efficiency score is calculated as the sum of total travel time (driving + subway) and total cost (parking + fare), with lower scores indicating more efficient routes.
+                            The scores were then normalized out of 100 and mapped below.</p>
+
+                        <p>This data was sourced from <a href="https://developers.google.com/maps/documentation/routes" target="_blank">Google Maps API</a> for driving routes, <a href="https://www.mbta.com/parking/overnight-parking" target="_blank">MBTA data</a> for parking fees and subway fares, and <a href="https://www.mass.gov/info-details/massgis-data-layers" target="_blank">MassGIS</a> for train and subway line geographic data.</p>
+
+                    <h2>Route Efficiency Visualizations</h2>
+                        <div>
+                            <img src="images/pvdtobosfinal.jpg" style="display: block; margin: 0 auto; width: 100%; max-width: 900px; margin-bottom: 20px;">
+                            <h3>Optimal Travel Routes from Providence to Boston</h3>
+                                <p>The analysis finds that the most efficient route from Providence to Boston is through Wonderland, achieving the highest normalized efficiency score.
+                                    This is due to its relatively fast subway travel time and low total costs.
+                                    Route 128 and South Station follow closely behind, but suffers from a long train commute. South Station's parking fees drag its score down.
+                                    Stations like Ayer, Salem, and Beverly rank lower due to longer drive and train travel times.</p>
+                        </div>
+                        <div>
+                            <img src="images/top3final.jpg" style="display: block; margin: 0 auto; width: 100%; max-width: 900px; margin-bottom: 20px;">
+                            <h3>Top 3 Travel Routes from Providence to Boston</h3>
+                                <p>This visualization focuses on the top 3 routes, Wonderland, Route 128, and South Station.
+                                The map visually represents where driving transitions to public transit for a better view on driving and subway distances.</p>
+                        </div>
+
+                    <h2>Project Repository</h2>
+                        <p>You can explore the full dataset, SQL queries, database schema, and visualization files in the GitHub repository for this project.</p>
+                        <p><a href="https://github.com/braxda/pvd-bos-optimization" target="_blank" class="button">View on GitHub</a></p>
+                </section>
+
+        <footer id="footer" style="text-align: center;">
+            <p>Built with <a href="https://html5up.net/" target="_blank">HTML5 UP</a></p>
+            <p>
+                <a href="mailto:dylanbracken30@gmail.com" class="icon solid fa-envelope"></a>
+                <a href="https://github.com/braxda" class="icon brands fa-github"></a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
