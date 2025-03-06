@@ -1886,6 +1886,7 @@ button,
     gap: 1.5em;
     margin-bottom: 1.5em;
     width: 100%;
+    max-width: 1600px;
 }
 
 .featured-project .image-container a {
@@ -1895,7 +1896,7 @@ button,
 }
 
 .featured-project .image-container img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     border-radius: 5px;
