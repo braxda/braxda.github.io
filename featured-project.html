@@ -31,13 +31,13 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#other-projects" class="dropbtn">Other Projects</a>
+                                <a href="index.html#other-projects" class="dropbtn">Other Projects</a>
                                 <ul class="dropdown-content">
                                     <li><a href="methane.html">Methane Emissions Analysis</a></li>
                                     <li><a href="pvd2bos.html">PVD to BOS Route Optimization</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
                         </ul>
                     </nav>
                 </header>
@@ -56,24 +56,54 @@
                         <p class="image-credit" style="bottom: 5px; right: 5px; width: max-content; padding: 3px 6px; padding-left: 825px; margin-top: -30px;">Image Source: <a href="https://www.cbssports.com/" target="_blank">CBS Sports</a></p>
                     </div>
 
-                    <p>This project explores college football recruiting trends using Python, SQL, ArcGIS, QGIS, and Tableau to analyze player hometowns, team distribution, and recruiting strength.</p>
+                    <p>This project aims to examine how Michigan, Washington, Texas, and Alabama recruited talent across the country, using a combination of GIS, SQL, and Tableau to analyze player hometowns, team distribution, and recruiting strength.
+                        The analysis provides a data-driven look into the national and regional recruiting strategies of the 2023 CFP teams, offering insights into where top talent comes from and how competitive different regions are in the recruiting landscape.
+                        Player data was collected via the <a href="https://collegefootballdata.com/">CollegeFootballData API</a> and <a href="https://247sports.com/college/football/recruiting/">247Sports</a>, then geolocated using Geopy to map hometowns.</p>
                     <hr class="major" />
 
                     <!-- Python & SQL Section -->
-                    <h2>Data Collection & SQL Queries</h2>
-                    <p>Data was collected using the CFBD API and processed with Python. SQL was used for storing, querying, and analyzing key insights.</p>
+                    <h2>SQL Queries</h2>
+                    <p>After cleaning and importing the data into PostgreSQL, SQL queries provided insights into each school's recruiting footprint, including the average distance of recruits, key metropolitan regions, and competition levels within those areas.
+                        Take a look at one of my example queries below used to calculate the distance from each player's hometown to the school they attended:
+                    </p>
 
                     <!-- Example SQL Query -->
-                    <pre><code>
--- INSERT A QUERY OR TWO HERE, MIGHT NEED TO FORMAT THIS SO THAT IT LIKE SPLITS HALF AND HALF
-SELECT state, COUNT(*) AS recruit_count
-FROM players
+                    <pre style="font-size: 16px; line-height: 1.5; background-color: #f4f4f4; padding: 10px;">
+                        <code>
+-- This query calculates how far the student's hometown is from
+-- the school they are attending
+
+WITH school_locations AS (
+    SELECT 'Texas' as team, 30.2849 as lat, -97.7341 as lon
+    UNION SELECT 'Michigan', 42.2808, -83.7430
+    UNION SELECT 'Alabama', 33.2098, -87.5692
+    UNION SELECT 'Washington', 47.6553, -122.3035
+)
+SELECT
+    p.team,
+    p.name,
+    p.hometown,
+    p.state,
+    CAST(
+        3959 * 2 * asin(
+            sqrt(
+                pow(sin(radians(s.lat - p.latitude) / 2), 2) +
+                cos(radians(p.latitude)) * cos(radians(s.lat)) *
+                pow(sin(radians(s.lon - p.longitude) / 2), 2)
+            )
+        ) AS NUMERIC(10,1)
+    ) as distance_miles
+FROM players p
+JOIN school_locations s ON p.team = s.team
+WHERE p.latitude IS NOT NULL
+ORDER BY distance_miles DESC;
+
                     </code></pre>
 
-                    <p>For a full view of the dataset and SQL queries used to analyze the data, check out this project's GitHub repository <a href="https://github.com/braxda/recruiting-analysis/tree/main/sql">here.</p>
+                    <p style="text-align: center;"><strong>For a full view of the dataset and SQL queries used to analyze the data, check out the SQL section of this project's GitHub repository here:</strong></p>
                     <div style="text-align: center;">
                         <div class="actions">
-                            <a href="https://github.com/braxda/recruiting-analysis" target="_blank" class="button">View GitHub Repo</a>
+                            <a href="https://github.com/braxda/recruiting-analysis/tree/main/sql" target="_blank" class="button">View SQL Queries</a>
                         </div>
                     </div>
 
@@ -81,26 +111,26 @@ FROM players
 
                     <!-- QGIS Maps Section -->
                     <h2>Recruiting Footprint Maps</h2>
-                    <p>Using QGIS, I geocoded player hometowns and created spatial layers to analyze which regions produce the most talent.</p>
+                    <p>Using GIS tools, I mapped recruits and connected them to their schools with geodesic lines, while 1-hour isochrones visualized local recruiting reach.
+                        I created a nationwide heatmap that highlights talent hotspots, and standard deviation ellipses showed the geographic spread of each team’s recruits.
+                        I downloaded census data to classify players by metro region, and I developed a competition metric to quantify which regions had the highest recruiting intensity.
+                        <p>Take a look at an example isochrone for the University of Michigan mapped below, showing how many students live within a 1-hour driving radius of the school.</p>
+                    </p>
 
                     <!-- QGIS Images -->
-                    <div class="row">
-                        <div class="col-6 col-12-small">
-                            <a href="qgis.html">
-                                <span class="image fit"><img src="images/pic04.jpg" alt="QGIS Recruiting Map 1" /></span>
+                    <div class="posts" style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                        <article style="text-align: center;">
+                            <a href="qgis.html" class="image" style="display: inline-block;">
+                                <img src="images/michigan_isochrone.png" style="max-width: 100%; height: auto;" />
                             </a>
-                        </div>
-                        <div class="col-6 col-12-small">
-                            <a href="qgis.html">
-                                <span class="image fit"><img src="images/pic06.jpg" alt="QGIS Recruiting Map 2" /></span>
-                            </a>
-                        </div>
+                        </article>
                     </div>
 
-                    <p>These maps highlight key recruiting hotspots and how different schools dominate certain areas.</p>
+
                     <div style="text-align: center;">
+                    <p><strong>Check out a few more of my interactive and static maps here:</strong></p>
                         <div class="actions">
-                          <a href="qgis.html" class="button big">Explore Full QGIS Map</a>
+                          <a href="qgis.html" class="button big">Explore My Maps</a>
                         </div>
                     </div>
 
@@ -108,12 +138,13 @@ FROM players
 
                     <!-- Tableau Dashboard Section -->
                     <h2>Interactive Tableau Dashboards</h2>
-                    <p>PLAY AROUND WITH THE WASHINGTON DASHBOARD HERE:DASHBOARSD FOR MICHIGAN, ALABAMA, TEXAS FOUND HEREinteractive dashboards showcasing team recruiting rankings, player distributions, and regional strengths.</p>
+                    <p>I made interactive Tableau dashboards for each team showing metro and regional distributions of recruits, as well as showing how each team prioritizes highly skilled players at various positions groups.
+                        Please play around with the University of Washington's Recruiting Dashboard below. You can click on various elements of the dashboard to filter by metro area, position, or star rating.</p>
 
                     <!-- Embed Tableau Dashboard -->
                     <div class='tableauPlaceholder' id='viz1738381192078' style='position: relative'>
 						<noscript>
-							<a href='#'><img alt='Washington Dashboard' src='https://public.tableau.com/static/images/cf/cfb_michigan_FINAL/washington_dashboard/1_rss.png' style='border: none' /></a>
+							<a href='#'><img alt='Washington Dashboard' src='https://public.tableau.com/static/images/cf/cfb_michigan_FINAL/washington_dashboard/1.png' style='border: none' /></a>
 						</noscript>
 						<object class='tableauViz' style='display:none;'>
 							<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
@@ -149,14 +180,26 @@ FROM players
 						vizElement.parentNode.insertBefore(scriptElement, vizElement);
 					</script>
 
-                    <p>Click around to filter data and gain insights!</p>
+                    <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <p style="padding-top: 20px;">
+                            <strong>Interactive dashboards for Michigan, Texas, and Alabama can be found here:</strong>
+                        </p>
+                        <a href="tableau.html" style="text-decoration: none;">
+                            <button>
+                                View All Dashboards
+                            </button>
+                        </a>
+                    </div>
+
 
                     <hr class="major" />
 
                     <!-- Final GitHub Repository Link -->
-                    <h2>Explore the Full Project</h2>
-                    <p>EDIT THIS LINKThe complete dataset, Python scripts, and SQL queries are available on GitHub:</p>
-                    <a href="https://github.com/YOUR_GITHUB_USERNAME/recruiting-analysis" target="_blank" class="button">View GitHub Repo</a>
+                    <div style="align-items: center; text-align: center;">
+                        <h2>Explore the Full Project</h2>
+                        <p>The complete dataset, Python scripts, SQL queries, GIS projects and layer data are available on the project's GitHub repository:</p>
+                        <a href="https://github.com/braxda/recruiting-analysis" target="_blank" class="button">View GitHub Repo</a>
+                    </div>
 
                 </section>
 
@@ -164,7 +207,7 @@ FROM players
         </div>
 
         <!-- Footer -->
-        <section style="padding: .25em 0 !important; background-color: #f4f4f4;">
+        <section style="padding: .25em 0 !important;">
             <footer id="footer" style="text-align: center;">
                 <p style="font-size: 12px; line-height: 1.1; margin-bottom: 0.5em;">
                     Built with <a href="https://html5up.net/" target="_blank" rel="noopener noreferrer">HTML5 UP</a>
