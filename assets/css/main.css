@@ -1902,6 +1902,23 @@ button,
     border-radius: 5px;
 }
 
+.image-credit {
+    bottom: 5px;
+    right: 5px;
+    font-size: 0.8em; /* Smaller text */
+    padding-right: 5px;
+    border-radius: 3px;
+    text-align: right;
+}
+
+.image-credit a {
+    text-decoration: none;
+}
+
+.image-credit a:hover {
+    text-decoration: underline;
+}
+
 /*Featured Project - Map*/
 #map {
     height: 500px;
