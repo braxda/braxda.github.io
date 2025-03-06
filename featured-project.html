@@ -17,7 +17,7 @@
 
                 <!-- Header -->
                 <header id="header">
-                    <a href="index.html" class="logo"><strong>Dylan Bracken</strong></a>
+                    <a href="index.html" class="logo">Dylan Bracken</a>
                     <nav>
                         <ul class="icons" style="display: flex; gap: 20px; align-items: center;">
                             <li><a href="index.html">Home</a></li>
@@ -49,15 +49,19 @@
                     </header>
 
                     <!-- Main Project Image -->
-                    <span class="image main"><img src="images/pic01.jpg" alt="College Football Recruiting Analysis" /></span>
+                    <div class="image-container">
+                        <span class="image main">
+                            <img src="images/2023cfp.png" alt="College Football Recruiting Analysis" />
+                        </span>
+                        <p class="image-credit" style="bottom: 5px; right: 5px; width: max-content; padding: 3px 6px; padding-left: 825px; margin-top: -30px;">Image Source: <a href="https://www.cbssports.com/" target="_blank">CBS Sports</a></p>
+                    </div>
 
-                    <p>This project explores <strong>college football recruiting trends</strong> using <strong>Python, SQL, ArcGIS, QGIS, and Tableau</strong> to analyze player hometowns, team distribution, and recruiting strength.</p>
-
+                    <p>This project explores college football recruiting trends using Python, SQL, ArcGIS, QGIS, and Tableau to analyze player hometowns, team distribution, and recruiting strength.</p>
                     <hr class="major" />
 
                     <!-- Python & SQL Section -->
                     <h2>Data Collection & SQL Queries</h2>
-                    <p>Data was collected using the <strong>CFBD API</strong> and processed with Python. SQL was used for <strong>storing, querying, and analyzing</strong> key insights.</p>
+                    <p>Data was collected using the CFBD API and processed with Python. SQL was used for storing, querying, and analyzing key insights.</p>
 
                     <!-- Example SQL Query -->
                     <pre><code>
@@ -66,14 +70,18 @@ SELECT state, COUNT(*) AS recruit_count
 FROM players
                     </code></pre>
 
-                    <p><strong>EDIT THIS LINKWant to see more SQL queries AND ANALYSIS?</strong> Check out MY SQL PAGE on GitHub:</p>
-                    <a href="https://github.com/YOUR_GITHUB_USERNAMEADDDDDDLINKTOSQLFOLDER/recruiting-analysis/" target="_blank" class="button">View GitHub Repo</a>
+                    <p>For a full view of the dataset and SQL queries used to analyze the data, check out this project's GitHub repository <a href="https://github.com/braxda/recruiting-analysis/tree/main/sql">here.</p>
+                    <div style="text-align: center;">
+                        <div class="actions">
+                            <a href="https://github.com/braxda/recruiting-analysis" target="_blank" class="button">View GitHub Repo</a>
+                        </div>
+                    </div>
 
                     <hr class="major" />
 
                     <!-- QGIS Maps Section -->
                     <h2>Recruiting Footprint Maps</h2>
-                    <p>Using <strong>QGIS</strong>, I geocoded player hometowns and created <strong>spatial layers</strong> to analyze which regions produce the most talent.</p>
+                    <p>Using QGIS, I geocoded player hometowns and created spatial layers to analyze which regions produce the most talent.</p>
 
                     <!-- QGIS Images -->
                     <div class="row">
@@ -100,7 +108,7 @@ FROM players
 
                     <!-- Tableau Dashboard Section -->
                     <h2>Interactive Tableau Dashboards</h2>
-                    <p>PLAY AROUND WITH THE WASHINGTON DASHBOARD HERE:DASHBOARSD FOR MICHIGAN, ALABAMA, TEXAS FOUND HERE<strong>interactive dashboards</strong> showcasing <strong>team recruiting rankings, player distributions, and regional strengths</strong>.</p>
+                    <p>PLAY AROUND WITH THE WASHINGTON DASHBOARD HERE:DASHBOARSD FOR MICHIGAN, ALABAMA, TEXAS FOUND HEREinteractive dashboards showcasing team recruiting rankings, player distributions, and regional strengths.</p>
 
                     <!-- Embed Tableau Dashboard -->
                     <div class='tableauPlaceholder' id='viz1738381192078' style='position: relative'>
@@ -147,7 +155,7 @@ FROM players
 
                     <!-- Final GitHub Repository Link -->
                     <h2>Explore the Full Project</h2>
-                    <p><strong>EDIT THIS LINKThe complete dataset, Python scripts, and SQL queries are available on GitHub:</strong></p>
+                    <p>EDIT THIS LINKThe complete dataset, Python scripts, and SQL queries are available on GitHub:</p>
                     <a href="https://github.com/YOUR_GITHUB_USERNAME/recruiting-analysis" target="_blank" class="button">View GitHub Repo</a>
 
                 </section>
