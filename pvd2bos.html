@@ -49,8 +49,38 @@
                         <p>To rank the most efficient routes, I developed a SQL query that computed efficiency scores based on a balance of total travel time and cost.
                             The efficiency score is calculated as the sum of total travel time (driving + subway) and total cost (parking + fare), with lower scores indicating more efficient routes.
                             The scores were then normalized out of 100 and mapped below.</p>
-
                         <p>This data was sourced from <a href="https://developers.google.com/maps/documentation/routes" target="_blank">Google Maps API</a> for driving routes, <a href="https://www.mbta.com/parking/overnight-parking" target="_blank">MBTA data</a> for parking fees and subway fares, and <a href="https://www.mass.gov/info-details/massgis-data-layers" target="_blank">MassGIS</a> for train and subway line geographic data.</p>
+                    <hr class="major" />
+
+                    <h2>Efficiency Score Calculation Query</h2>
+                    <pre style="font-size: 16px; line-height: 1.5; background-color: #f4f4f4; padding: 10px;"><code>
+INSERT INTO efficiency_scores (efficiency_id, subway_id, total_trip_time_minutes, total_cost, total_score, normalized_score)
+WITH route_scores AS (
+    SELECT
+        s.subway_id,
+        EXTRACT(EPOCH FROM d.travel_time)/60 + EXTRACT(EPOCH FROM s.ride_time)/60 AS total_trip_time_minutes,
+        COALESCE(st.parking_fee, 0) + s.ride_fare AS total_cost,
+        EXTRACT(EPOCH FROM d.travel_time)/60 + EXTRACT(EPOCH FROM s.ride_time)/60 + COALESCE(st.parking_fee, 0) + s.ride_fare AS total_score
+    FROM driving_routes d
+    JOIN subway_rides s ON d.destination_station_id = s.start_station_id
+    JOIN stations st ON d.destination_station_id = st.station_id
+)
+SELECT
+    ROW_NUMBER() OVER () AS efficiency_id, -- Generate a unique efficiency_id
+    subway_id,
+    total_trip_time_minutes,
+    total_cost,
+    ROUND((total_score)::NUMERIC, 3) AS total_score,
+    ROUND((100.0 * (
+        (SELECT MAX(total_score) FROM route_scores) - total_score
+    ) / (
+        (SELECT MAX(total_score) FROM route_scores) -
+        (SELECT MIN(total_score) FROM route_scores)
+    ))::NUMERIC, 2) AS normalized_score
+FROM route_scores
+ORDER BY normalized_score DESC;
+                    </code></pre>
+                    <hr class="major" />
 
                     <h2>Route Efficiency Visualizations</h2>
                         <div>
@@ -67,11 +97,20 @@
                                 <p>This visualization focuses on the top 3 routes, Wonderland, Route 128, and South Station.
                                 The map visually represents where driving transitions to public transit for a better view on driving and subway distances.</p>
                         </div>
+                        <hr class="major" />
 
-                    <h2>Project Repository</h2>
-                        <p>You can explore the full dataset, SQL queries, database schema, and visualization files in the GitHub repository for this project.</p>
-                        <p><a href="https://github.com/braxda/pvd-bos-optimization" target="_blank" class="button">View on GitHub</a></p>
-                </section>
+                        <!-- Download Link for Files -->
+                        <div style="text-align: center;">
+                            <h2>GitHub Repository</h2>
+                            <p>If you’d like to take a look at the SQL schema, the raw data or the GIS project files, visit the project's GitHub repository.</p>
+                            <a href="https://github.com/braxda/pvd-bos-optimization" target="_blank" class="button">View GitHub Repo</a>
+                        </div>
+                        <hr class="major" />
+
+                        <!-- Back to Other Project -->
+                        <div style="text-align: center;">
+                        <a href="index.html#other-projects" class="button">← Back to Other Project</a>
+                        </div>
 
                 <!-- Footer -->
                 <section style="padding: .25em 0 !important;">
