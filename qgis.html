@@ -46,22 +46,57 @@
                 <!--Footprint Map Section-->
                 <section>
                         <h1>Recruiting Maps</h1>
-                        <p>Explore different recruiting layers: player locations, school footprints, travel zones, and more.</p>
+                        <p>For this portion of the project, I developed interactive and static maps to visualize recruiting patterns for Michigan, Washington, Texas, and Alabama.
+                            The analysis explores trends in regional recruitment and how teams prioritize between local and out-of-state players.
+                            The maps provide insights into player distribution across the country, showing how competitive each team is in certain regions and their success in attracting recruits from highly talent-dense areas.
+                        </p>
+                    <hr class="major" />
 
                     <!--Recruiting Footprint Map-->
+                    <h2>Recruiting Footprint Map</h2>
+                    <p>This map visualizes the geographic distribution of college football recruits for each school, using standard deviation ellipses to represent the spatial spread of recruited players.
+                        Each ellipse captures the core recruiting footprint for a program, showing the general area where most of their recruits are concentrated.
+                        Mean center points mark the average geographic location of recruits for each school, offering a quick visual cue to see where a program’s recruiting base is centered.
+                    </p>
                     <iframe src="https://ucd-cpe.maps.arcgis.com/apps/instant/sidebar/index.html?appid=4cf63702ddc047d6b257cd06a80e1551"
                 width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-                    <p>This map visualizes the geographic distribution of college football recruits for each school, using standard deviation ellipses to represent the spatial spread of recruited players. Each ellipse captures the core recruiting footprint for a program, showing the general area where most of their recruits are concentrated. Mean center points mark the average geographic location of recruits for each school, offering a quick visual cue to see where a program’s recruiting base is centered. Together, these tools reveal differences in recruiting strategies—some teams focus heavily on their local region, while others cast a wider national net.</p>
+                    <p>A few trends pop out from the map above, such as the relatively smaller diameter of Texas' standard deviation ellipse, both in height and width.
+                        A large portion of Texas' players are recruited from in-state, given that the Dallas-Fort Worth metro region is a hotbed of college football talent.
+                        Washington stands out, as the university itself is not even within it's own ellipse, representing a highly-decentralized recruiting footprint. A large portion of the players do hail from the west coast, but there are quite a few long-distance recruits from Texas, Hawaii, and even a German player.
+                        Michigan and Alabama unsurprisingly dominate the east-coast recruits from this group, given their proximity. Michigan focuses much more attention to the Northeast corridor than any other school, and Alabama holds most of their influence in the Southeast region of the country.
+                    </p>
+                    <p>Visit this map's project details on <a href="https://arcg.is/vP8HC0" target="_blank">ArcGIS Online</a>.</p>
+                    <hr class="major" />
 
                     <!--Recruiting Pipeline Map-->
+                    <h2>Recruiting Pathways Map</h2>
+                    <p>This hub-and-spoke map visualizes the connections between recruit's hometowns and the schools they signed with, illustrating the geographic reach and recruitment pipelines of each program.
+                        Each player is represented by a point at their hometown, with lines extending to their chosen program, revealing patterns of regional dominance, cross-country and international recruiting tendencies, and outlier signings.
+                        This map highlights the varying geographic strategies programs use to secure talent.
+                    </p>
                     <iframe src="https://ucd-cpe.maps.arcgis.com/apps/instant/sidebar/index.html?appid=04bebf4edcf5402f9f478971246149e9"
                 width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-                    <p>This hub-and-spoke map visualizes the connections between player recruit hometowns and the schools they signed with, illustrating the geographic reach and recruitment pipelines of each program. Each player is represented by a point at their hometown, with lines extending to their chosen program, revealing patterns of regional dominance, cross-country and international recruiting tendencies, and outlier signings. This map highlights the varying geographic strategies programs use to secure talent.</p>
+                    <p>
+                        This map again highlights two broad patterns emerging from the data. Texas has focused much of their recruiting on in-state players and players from the southern half of the country.
+                        Alabama is similarly highly-regionalized, with many of the players coming from the Southeast and Central regions of the United States.
+                        Michigan and Washington, on the other-hand, appear to be taaking a more country-wide approach to recruitment. These schools do not benefit from having proximity to talent-dense regions of the countries, so are forced to cast a wider net all across the country, and world.
+                    </p>
+                    <p>Visit this map's project details on <a href="https://arcg.is/14STaa" target="_blank">ArcGIS Online</a>.</p>
+                    <hr class="major" />
 
                     <!--Recruiting Hotspots Map-->
-                    <iframe src="https://ucd-cpe.maps.arcgis.com/apps/instant/sidebar/index.html?appid=6857ddf3eb2740c5bbc8497a34d8fb99"
-                width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-                    <p>This map visualizes player recruiting hotspots using a heatmap to identify regions with the highest concentration of college football recruits. Warmer colors indicate areas with a dense supply of talent, while cooler areas represent regions with fewer recruits. The visualization highlights well-established recruiting powerhouses like the Southeast, Texas, and California, while also revealing smaller, less traditional hotspots in areas like the Northeast corridor, Seattle, and Detroit—patterns likely driven, in part, by the presence of nearby College Football Playoff contenders from this season.</p>
+                    <section>
+                        <h2>Recruiting Heatmap</h2>
+                            <p>This map visualizes player recruiting hotspots using a heatmap to identify regions with the highest concentration of college football recruits.
+                            Warmer colors indicate areas with a dense supply of talent, while cooler areas represent regions with fewer recruits.
+                            </p>
+                            <iframe src="https://ucd-cpe.maps.arcgis.com/apps/instant/sidebar/index.html?appid=6857ddf3eb2740c5bbc8497a34d8fb99"
+                            width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                            <p>The visualization highlights well-established recruiting powerhouses like Los Angeles, Dallas-Forth Worth, and the Southeast, namely Alabama and the Atlanta Metro Area.
+                            It also reveals smaller, less traditional hotspots in areas like the Northeast corridor, Seattle, and Detroit—patterns likely driven, in part, by the presence of nearby College Football Playoff contenders from this season. </p>
+                    </section>
+                    <p>Visit this map's project details on <a href="https://arcg.is/0rvzPi" target="_blank">ArcGIS Online</a>.</p>
+                    <hr class="major" />
 
                     <!-- Static Isochrone Map Images -->
                     <section>
@@ -104,9 +139,9 @@
 
                     <!-- Download Link for QGIS Files -->
                     <div style="text-align: center;">
-                        <h2>Download QGIS Project</h2>
-                        <p>If you’d like to explore the raw data, you can download the QGIS project file or geojsons used in this analysis.</p>
-                        <a href="files/qgis_project.zip" class="button">Download QGIS Project</a>
+                        <h2>GitHub Repository</h2>
+                        <p>If you’d like to explore the raw data, visit the project's GitHub repository where you can download the QGIS project file, roster CSVs, or geopackages used in this analysis.</p>
+                        <a href="https://github.com/braxda/recruiting-analysis/tree/main/gis" class="button">View GitHub Repo</a>
                     </div>
                     <hr class="major" />
 
