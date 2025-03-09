@@ -7,8 +7,8 @@ Check it out live at: [https://braxda.github.io//](https://braxda.github.io//)
 
 Feel free to contact me using the information below if you have any questions or feedback!
 
--  Dylan Bracken
-- **GitHub**: [Your GitHub Profile](https://github.com/yourusername)
+- Dylan Bracken
+- **GitHub**: https://github.com/braxda
 - **Email**: dylanbracken30@gmail.com
 
 ## HTML Template
