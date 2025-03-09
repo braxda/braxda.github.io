@@ -22,7 +22,7 @@
                                 <a href="featured-project.html" class="dropbtn">Featured Project</a>
                                 <ul class="dropdown-content">
                                     <li><a href="featured-project.html">Project Introduction</a></li>
-                                    <li><a href="qgis.html">Recruiting Maps</a></li>
+                                    <li><a href="gis.html">Recruiting Maps</a></li>
                                     <li><a href="tableau.html">Tableau Dashboards</a></li>
                                     <li><a href="https://github.com/braxda/recruiting-analysis">GitHub Repo</a></li>
                                 </ul>
@@ -45,7 +45,7 @@
                         <p>Since overnight parking was not available close to my friend's place, I needed to find an alternative solution. Specifically, I would need to park at a station that did have overnight parking, and then take the train or subway to my destination at Maverick Station.
                             To tackle this, I designed SQL tables to store and analyze travel data, linking datasets and using aggregate functions to rank routes based on efficiency.</p>
                         <p>To generate the route efficiency analysis, I first used the Google Maps API to geolocate driving paths from Providence to MBTA train stations that did offer overnight parking, gathering travel times and distances.
-                            Next, I incorporated MassGIS and MBTA datasets to map the commuter rail and subway lines. These datasets were then joined in QGIS, allowing me to visualize the full route from driving segments to transit connections.</p>
+                            Next, I incorporated MassGIS and MBTA datasets to map the commuter rail and subway lines. These datasets were then joined using GIS tools, allowing me to visualize the full route from driving segments to transit connections.</p>
                         <p>To rank the most efficient routes, I developed a SQL query that computed efficiency scores based on a balance of total travel time and cost.
                             The efficiency score is calculated as the sum of total travel time (driving + subway) and total cost (parking + fare), with lower scores indicating more efficient routes.
                             The scores were then normalized out of 100 and mapped below.</p>
@@ -112,6 +112,7 @@ ORDER BY normalized_score DESC;
                         <div style="text-align: center;">
                         <a href="index.html#other-projects" class="button">← Back to Other Project</a>
                         </div>
+                </section>
 
                 <!-- Footer -->
                 <section style="padding: .25em 0 !important;">
@@ -125,6 +126,8 @@ ORDER BY normalized_score DESC;
                         </p>
                     </footer>
                 </section>
+            </div>
+        </div>
     </div>
 
     <script src="assets/js/jquery.min.js"></script>
